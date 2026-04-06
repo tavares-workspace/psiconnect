@@ -1,12 +1,9 @@
-// Aqui fazemos a conexão com o banco de dados PostgreSQL
-// Usamos o pacote 'pg' que é a biblioteca oficial do PostgreSQL para Node.js
+// Conexão com o banco de dados PostgreSQL
 
 const { Pool } = require('pg');
 
-// IMPORTANTE: O banco está hospedado no Railway.
-// O Railway SEMPRE exige SSL na conexão, mesmo quando você está rodando
-// o backend localmente. Por isso, ssl fica sempre ativo aqui.
-// rejectUnauthorized: false aceita o certificado do Railway sem erro.
+// O banco está hospedado no Railway.
+
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
   ssl: { rejectUnauthorized: false },

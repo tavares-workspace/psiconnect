@@ -1,10 +1,4 @@
-// Service do Google Calendar — versão corrigida e testada
-// Problemas corrigidos:
-// 1. Invite enviado ao e-mail do paciente quando disponível
-// 2. Nome do evento padronizado: "Sessão de Psicologia - [nome do paciente]"
-// 3. Tratamento robusto de tokens inválidos/expirados
-// 4. Logs claros para facilitar debug
-// 5. Remoção de attendee inválido (sem e-mail) que causava erro na API do Google
+// Service do Google Calendar
 
 const { google }         = require('googleapis');
 const calendarTokenModel = require('../models/calendarTokenModel');

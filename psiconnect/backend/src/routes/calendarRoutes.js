@@ -8,8 +8,9 @@ router.get   ('/auth-url',   authMiddleware, calendarController.getAuthUrl);
 router.get   ('/status',     authMiddleware, calendarController.getStatus);
 router.delete('/disconnect', authMiddleware, calendarController.disconnect);
 
-// callback NÃO tem authMiddleware — o Google redireciona sem token no header
-// O userId é recuperado pelo parâmetro "state" que enviamos na URL de autorização
+// callback NÃO tem authMiddleware
+// Google redireciona sem token no header
+// O userId é recuperado pelo parâmetro "state" que envia na URL de autorização
 router.get('/callback', calendarController.handleCallback);
 
 module.exports = router;

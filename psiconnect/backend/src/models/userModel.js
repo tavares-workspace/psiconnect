@@ -1,6 +1,4 @@
 // Model de usuários
-// Aqui ficam todas as funções que falam direto com a tabela "users" do banco
-// Usamos SQL simples com o pacote pg
 
 const pool = require('../config/database');
 

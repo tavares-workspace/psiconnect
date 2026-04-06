@@ -1,6 +1,4 @@
 // Model de prontuários
-// Evolução clínica criptografada com AES simples via Node.js (crypto nativo)
-// Mais simples e confiável que pgcrypto para este caso
 
 const pool   = require('../config/database');
 const crypto = require('crypto');
