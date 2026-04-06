@@ -1,10 +1,7 @@
-// Funções auxiliares para trabalhar com tokens JWT
-// JWT (JSON Web Token) é como um "crachá digital" que prova que o usuário está logado
 
 const jwt = require('jsonwebtoken');
 
 // Cria um novo token com os dados do usuário dentro
-// O token fica guardado no navegador e é enviado em toda requisição protegida
 function generateToken(payload) {
   return jwt.sign(payload, process.env.JWT_SECRET, {
     expiresIn: process.env.JWT_EXPIRES_IN || '7d',
