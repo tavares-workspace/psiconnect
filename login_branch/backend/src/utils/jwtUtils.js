@@ -1,6 +1,4 @@
 // Funções auxiliares para trabalhar com tokens JWT
-// JWT (JSON Web Token) é como um "crachá digital" que prova que o usuário está logado
-
 const jwt = require('jsonwebtoken');
 
 // Cria um novo token com os dados do usuário dentro

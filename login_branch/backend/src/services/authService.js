@@ -1,13 +1,12 @@
 // Service de autenticação
-// Aqui fica a lógica de negócio do login e cadastro
+// Lógica de negócio do login e cadastro
 // O controller chama estas funções e recebe o resultado
 
 const bcrypt = require('bcrypt');
 const userModel = require('../models/userModel');
 const { generateToken } = require('../utils/jwtUtils');
 
-// Número de "rounds" do bcrypt - quanto maior, mais seguro e mais lento
-// 10 é o valor recomendado para a maioria dos sistemas
+// Número de "rounds" do bcrypt
 const SALT_ROUNDS = 10;
 
 // Cadastra um novo usuário
@@ -21,7 +20,6 @@ async function cadastrar(name, email, password, crp, phone) {
   }
 
   // Criptografa a senha antes de salvar no banco
-  // Nunca salvamos a senha em texto puro por segurança
   const senhaCriptografada = await bcrypt.hash(password, SALT_ROUNDS);
 
   // Salva o usuário no banco
@@ -38,7 +36,7 @@ async function login(email, password) {
   // Busca o usuário pelo e-mail
   const usuario = await userModel.findByEmail(email);
 
-  // Se não encontrou, retorna erro genérico (não diz se é e-mail ou senha errada, por segurança)
+  // Se não encontrou, retorna erro genérico
   if (!usuario) {
     const erro = new Error('E-mail ou senha incorretos.');
     erro.status = 401;

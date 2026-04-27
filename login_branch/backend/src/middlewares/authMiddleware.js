@@ -1,6 +1,5 @@
 // Middleware de autenticação
-// Um middleware é uma função que roda ANTES do controller
-// Este aqui verifica se o usuário está logado antes de deixar acessar a rota
+// Verifica se o usuário está logado antes de deixar acessar a rota
 
 const { verifyToken } = require('../utils/jwtUtils');
 
